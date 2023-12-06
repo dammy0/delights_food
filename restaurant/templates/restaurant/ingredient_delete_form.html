@@ -1,0 +1,13 @@
+{% extends 'restaurant/base.html' %}
+
+{% block content %}
+
+<h2>Delete Ingredient</h2>
+<form method="POST" action="">
+    {% csrf_token %}
+    <p>Are you sure you want to delete {{ object }}?</p>
+    <input type="submit" value="Submit"/>
+    <a href="{% url 'ingredientlist' %}">Cancel</a>
+</form>
+
+{% endblock %}

@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'restaurant/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> -->
+    <title>Delights</title>
+</head>
+<body>
+    <!-- <h1>My name is Oluwadamilola Oduntan, and I am a Data Scientist</h1> -->
+    <div class="nav-bar">
+        <div class="container">
+            <a class="logo" href="{% url 'home' %}">Django<span>Delights</span></a>
+
+            <img id="mobile-cta" class="mobile-menu" src="{% static 'restaurant/menu.svg' %}" alt="Open Navigation">
+
+            <nav>
+                <img id="mobile-exit" class="mobile-menu-exit" src="{% static 'restaurant/exit.svg' %}" alt="Exit Navigation">
+                <ul class="primary-nav">
+                    <li class="current"><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="{% url 'ingredientlist' %}">Ingredients</a></li>
+                    <li><a href="#">Recipe Requirements</a></li>
+                    <li><a href="#">Purchases</a></li>
+                </ul>
+                <ul class="secondary-nav">
+                    <li><a href="#contact-section">Contact</a></li>
+                    <li class="go-premium-cta"><a href="#">Go Premium</a></li>
+                </ul>
+            </nav>
+
+        </div>
+
+    </div>
+
+    {% block content %}
+    {% endblock %}
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-left">
+                <h2>Contact</h2>
+
+                <form>
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name">
+
+                    <label for="message">Message</label>
+                    <textarea d="message" name="message" cols="30" rows="10"></textarea>
+
+                    <input type="submit" class="send-message-eta" value="Send Message">
+                </form>
+            </div>
+            <div class="contact-right">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52871.86609905527!2d-118.43455343710363!3d34.082543932846725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379fd081ed1!2sBeverly%20Hills%2C%20CA!5e0!3m2!1sen!2sus!4v1652741324012!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const mobileBtn = document.getElementById('mobile-cta')
+              nav = document.querySelector('nav')
+              mobileBtnExit = document.getElementById('mobile-exit');
+
+        mobileBtn.addEventListener('click', () => {
+            nav.classList.add('menu-btn')
+            console.log(nav.classList)
+        });
+
+        mobileBtnExit.addEventListener('click', () => {
+            nav.classList.remove('menu-btn')
+        })
+
+
+    </script>
+
+</body>
+</html>
