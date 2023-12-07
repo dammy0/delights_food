@@ -45,3 +45,22 @@ class MenuItemDelete(DeleteView):
     model = MenuItem
     success_url = "/menuitem/list"
     template_name = "restaurant/menuitem_delete_form.html"
+
+class RecipeRequirementList(ListView):
+    model = RecipeRequirement
+    template_name = "restaurant/reciperequirement_list.html"
+
+class RecipeRequirementCreate(CreateView):
+    model = RecipeRequirement
+    form_class = RecipeRequirementForm
+    template_name = "restaurant/reciperequirement_create_form.html"
+
+class RecipeRequirementUpdate(UpdateView):
+    model = RecipeRequirement
+    form_class = RecipeRequirementForm
+    template_name = "restaurant/reciperequirement_update_form.html"
+
+class RecipeRequirementDelete(DeleteView):
+    model = RecipeRequirement
+    success_url = "/reciperequirement/list"
+    template_name = "restaurant/reciperequirement_delete_form.html"

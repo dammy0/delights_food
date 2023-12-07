@@ -11,4 +11,8 @@ urlpatterns = [
     path("menuitem/create", views.MenuItemCreate.as_view(), name="menuitemcreate"),
     path("menuitem/update/<pk>", views.MenuItemUpdate.as_view(), name="menuitemupdate"),
     path("menuitem/delete/<pk>", views.MenuItemDelete.as_view(), name="menuitemdelete"),
+    path("reciperequirement/list", views.RecipeRequirementList.as_view(), name="reciperequirementlist"),
+    path("reciperequirement/create", views.RecipeRequirementCreate.as_view(), name="reciperequirementcreate"),
+    path("reciperequirement/update/<pk>", views.RecipeRequirementUpdate.as_view(), name="reciperequirementupdate"),
+    path("reciperequirement/delete/<pk>", views.RecipeRequirementDelete.as_view(), name="reciperequirementdelete"),
 ]

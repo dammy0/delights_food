@@ -1,0 +1,13 @@
+{% extends 'restaurant/base.html' %}
+
+{% block content %}
+
+<h2>Update Recipe</h2>
+<form method="POST" action="">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit"/>
+    <a href="{% url 'reciperequirementlist' %}">Cancel</a>
+</form>
+
+{% endblock %}
