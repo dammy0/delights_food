@@ -1,0 +1,30 @@
+{% extends 'restaurant/base.html' %}
+
+{% block content %}
+
+<h2>Menu Items</h2>
+<a href="{% url 'menuitemcreate' %}">Add Menu Item</a>
+
+<table>
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Cost</th>
+        <th>  </th>
+        <th>  </th>
+    </tr>
+
+    {% for item in menuitem_list %}
+    <tr>
+        <td>{{ item.item }}</td>
+        <td>{{ item.price }}</td>
+        <td>{{ item.menu_cost }}</td>
+        <td><a href="{% url 'menuitemupdate' item.id%}">Edit</a></td>
+        <td><a href="{% url 'menuitemdelete' item.id%}">Delete</a></td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

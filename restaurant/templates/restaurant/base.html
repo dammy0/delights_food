@@ -22,10 +22,10 @@
                 <img id="mobile-exit" class="mobile-menu-exit" src="{% static 'restaurant/exit.svg' %}" alt="Exit Navigation">
                 <ul class="primary-nav">
                     <li class="current"><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="#">Menu</a></li>
+                    <li><a href="{% url 'menuitemlist' %}">Menu</a></li>
                     <li><a href="{% url 'ingredientlist' %}">Ingredients</a></li>
-                    <li><a href="#">Recipe Requirements</a></li>
-                    <li><a href="#">Purchases</a></li>
+                    <li><a href="{% url 'ingredientlist' %}">Recipe Requirements</a></li>
+                    <li><a href="{% url 'ingredientlist' %}">Purchases</a></li>
                 </ul>
                 <ul class="secondary-nav">
                     <li><a href="#contact-section">Contact</a></li>

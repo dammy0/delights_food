@@ -26,3 +26,22 @@ class IngredientDelete(DeleteView):
     model = Ingredient
     success_url = "/ingredient/list"
     template_name = "restaurant/ingredient_delete_form.html"
+
+class MenuItemList(ListView):
+    model = MenuItem
+    template_name = "restaurant/menuitem_list.html"
+
+class MenuItemCreate(CreateView):
+    model = MenuItem
+    form_class = MenuItemForm
+    template_name = "restaurant/menuitem_create_form.html"
+
+class MenuItemUpdate(UpdateView):
+    model = MenuItem
+    form_class = MenuItemForm
+    template_name = "restaurant/menuitem_update_form.html"
+
+class MenuItemDelete(DeleteView):
+    model = MenuItem
+    success_url = "/menuitem/list"
+    template_name = "restaurant/menuitem_delete_form.html"

@@ -1,4 +1,5 @@
 from django.db import models
+from decimal import *
 
 # Create your models here.
 class Ingredient(models.Model):
@@ -18,7 +19,7 @@ class MenuItem(models.Model):
 
     @property
     def menu_cost(self):
-        total_cost = 0.0
+        total_cost = Decimal(0.00)
         ingredient_list = self.reciperequirement_set.all()
         for i in ingredient_list:
             total_cost += i.ingredient_cost
@@ -26,7 +27,7 @@ class MenuItem(models.Model):
     def __str__(self):
         return self.item
     def get_absolute_url(self):
-        return "/ingredient/list"
+        return "/menuitem/list"
 
 class RecipeRequirement(models.Model):
     menuitem = models.ForeignKey(
@@ -48,7 +49,7 @@ class RecipeRequirement(models.Model):
     def __str__(self):
         return str(self.menuitem) + " " + str(self.ingredient)
     def get_absolute_url(self):
-        return "/ingredient/list"
+        return "/reciperequirement/list"
 
 class Purchase(models.Model):
     item_purchased = models.ForeignKey(
@@ -71,4 +72,4 @@ class Purchase(models.Model):
     def __str__(self):
         return str(self.item_purchased) + " " + str(self.created_at)
     def get_absolute_url(self):
-        return "/ingredient/list"
+        return "/purchase/list"
